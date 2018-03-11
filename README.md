@@ -25,18 +25,18 @@ Several different techniques for feature extraction were used this project, incl
 
 I started by reading in all the vehicle and non-vehicle images. Here is an example of one of each of the vehicle and non-vehicle classes:
 
-image
+![Picture](examples/output_24_1.jpg)
 
 ### Histogram of Oriented Gradients (HOG)
 The code for extracting HOG features from an image is defined by the method get_hog_features and is contained in the cell titled "Define Method to Convert Image to Histogram of Oriented Gradients (HOG)." The figure below shows a comparison of a car image and its associated histogram of oriented gradients, as well as the same for a non-car image.
 The scikit-image package has a built in function to handle HOG extraction, which is tuned by parameters including orientations, pixels_per_cell, and cells_per_block. 
 
-**orientations:** I tried with both 8 and 9 , later find there is no such huge difference , so kept it with 8 .
+**orientations:** I tried with both 8 and 9 , later find there is no such huge difference , so kept it with 9 .
 pixels_per_cell and cells_per_block : I kept these values  unchanged what I tried earlier in scikit-image HOG tutorial .This gave a good result .
 
 There is a balance to be struck between accuracy and speed of the classifier, and my strategy was to bias toward speed first, and achieve as close to real-time predictions as possible, and then pursue accuracy if the detection pipeline were not to perform satisfactorily.
 
-image
+![Picture](examples/output_27_2.jpg)
 
 ### Preprocessing Data
 
@@ -55,7 +55,7 @@ Test Accuracy of SVC was 0.9916
 
 ### Sliding Windows Search
 
-![sliding_windows]
+![sliding_windows](examples/output_14_2.jpg)
 
 Object Detection.ipynb outlines the sliding windows approach to search for vehicles in a test image with trained SVC classifier.
 
@@ -76,6 +76,9 @@ In the section titled "Method for Using Classifier to Detect Cars in an Image" I
  
  The sync method is described in the Object detection.pynb
  
+ ![heatmap](examples/output_32_5.jpg)
+ ![heatmap](examples/output_32_3.jpg)
+ ![findcar](examples/output_36_1.JPG)
  
 ### Discussion
 
